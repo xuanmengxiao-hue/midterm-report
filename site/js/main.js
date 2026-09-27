@@ -111,7 +111,7 @@ const rio = new IntersectionObserver((entries) => {
         const delay = Number(v.dataset.stagger || 0) % 4 * 80;
         setTimeout(() => {
           v.style.opacity = "1";
-          v.style.transform = "none";
+          v.style.transform = "translateY(0)";
         }, delay);
       }
     }
