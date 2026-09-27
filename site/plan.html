@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>03 下一阶段计划</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=n21" />
+</head>
+<body>
+  <canvas class="fx-bg" id="fx-bg"></canvas>
+  <canvas class="fx-cursor" id="fx-cursor"></canvas>
+  <div class="grain"></div>
+  <header class="nav">
+    <a class="mark" href="index.html"><img src="assets/watermark.png?v=2" alt="微博 轩梦潇" /></a>
+    <nav class="nav-links">
+      <a href="index.html">目录</a>
+      <a href="work.html">01 做了什么 / 学了什么</a>
+      <a href="think.html">02 思考与探索</a>
+      <a class="is-active" href="plan.html">03 下一阶段计划</a>
+    </nav>
+    <button class="menu-btn" type="button">Menu</button>
+  </header>
+  <div class="overlay" id="overlay">
+    <div class="overlay-head">
+      <button class="menu-btn overlay-close" type="button">Close</button>
+    </div>
+    <nav>
+      <a class="chapter" href="index.html"><span class="idx">00</span>目录与自我介绍<em>Overview</em></a>
+      <a class="chapter" href="work.html"><span class="idx">01</span>做了什么？学了什么？<em>Work &amp; Learning</em></a>
+      <a class="chapter" href="think.html"><span class="idx">02</span>思考与探索<em>Safety · Retention · AI</em></a>
+      <a class="chapter" href="plan.html"><span class="idx">03</span>下一阶段计划<em>Next</em></a>
+    </nav>
+  </div>
+
+  <main class="page">
+    <div class="opener" data-opener>
+      <div class="opener-pin">
+        <p class="kicker opener-kicker" data-opener-kicker>第三部分</p>
+        <div class="opener-stack">
+          <h1 class="opener-title" data-opener-title>下一阶段计划</h1>
+          <p class="opener-ghost" data-opener-ghost aria-hidden="true">下一阶段计划</p>
+        </div>
+        <p class="lede" data-opener-sub>围绕真实问题做小范围验证和持续积累</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="grid-3">
+        <article class="card plan-card">
+          <div>
+            <div class="idx">01</div>
+            <h3>做饭圈策略持续调优</h3>
+            <p>跟踪饭圈策略量级、准确率、漏放/误伤，尝试记录预警后的分析和调优动作。</p>
+            <p>继续探索饭圈治理死角，挖掘更多策略逻辑，上线更多精细化策略。</p>
+          </div>
+          <a class="hint-click" href="think.html#ai">关联：策略准确率自动化巡检助手 →</a>
+        </article>
+        <article class="card plan-card">
+          <div>
+            <div class="idx">02</div>
+            <h3>沉淀可用于优化的 Case</h3>
+            <p>将舆情处置、曝光评估中的有效 Case 分类沉淀至知识库，为策略和模型优化提供更清晰输入。</p>
+          </div>
+          <a class="hint-click" href="work.html#学了什么">关联：业务链路与 Case 输入 →</a>
+        </article>
+        <article class="card plan-card">
+          <div>
+            <div class="idx">03</div>
+            <h3>把 AI 工具做成可复用能力</h3>
+            <p>开发可复用、能提流程、可验证的 AI 工具，并扩展到更多场景清单。</p>
+          </div>
+          <a class="hint-click" href="think.html#ai">关联：AI 探索两项落地 →</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="think.html">← 思考与探索</a>
+    <a href="index.html">回到目录</a>
+  </footer>
+  <script src="js/fx.js"></script>
+  <script src="js/main.js?v=n20"></script>
+</body>
+</html>

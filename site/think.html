@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>02 思考与探索</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=n21" />
+</head>
+<body>
+  <canvas class="fx-bg" id="fx-bg"></canvas>
+  <canvas class="fx-cursor" id="fx-cursor"></canvas>
+  <div class="grain"></div>
+  <header class="nav">
+    <a class="mark" href="index.html"><img src="assets/watermark.png?v=2" alt="微博 轩梦潇" /></a>
+    <nav class="nav-links">
+      <a href="index.html">目录</a>
+      <a href="work.html">01 做了什么 / 学了什么</a>
+      <a class="is-active" href="think.html">02 思考与探索</a>
+      <a href="plan.html">03 下一阶段计划</a>
+    </nav>
+    <button class="menu-btn" type="button">Menu</button>
+  </header>
+  <div class="overlay" id="overlay">
+    <div class="overlay-head">
+      <button class="menu-btn overlay-close" type="button">Close</button>
+    </div>
+    <nav>
+      <a class="chapter" href="index.html"><span class="idx">00</span>目录与自我介绍<em>Overview</em></a>
+      <a class="chapter" href="work.html"><span class="idx">01</span>做了什么？学了什么？<em>Work &amp; Learning</em></a>
+      <a class="chapter" href="think.html"><span class="idx">02</span>思考与探索<em>Safety · Retention · AI</em></a>
+      <a class="chapter" href="plan.html"><span class="idx">03</span>下一阶段计划<em>Next</em></a>
+    </nav>
+  </div>
+
+  <nav class="subnav">
+    <a class="is-active" href="#safety">安全服务能力</a>
+    <a href="#retention">用户留存与体验</a>
+    <a href="#ai">AI探索</a>
+  </nav>
+
+  <main class="page">
+    <div class="opener" data-opener>
+      <div class="opener-pin">
+        <p class="kicker opener-kicker" data-opener-kicker>第二部分</p>
+        <div class="opener-stack">
+          <h1 class="opener-title" data-opener-title>思考与探索</h1>
+          <p class="opener-ghost" data-opener-ghost aria-hidden="true">思考与探索</p>
+        </div>
+        <p class="opener-line" data-opener-line>
+          <span>安全服务能力</span>
+          <span>用户留存与体验</span>
+          <span>AI探索</span>
+        </p>
+      </div>
+    </div>
+
+    <section class="section chapter-bridge">
+      <div class="map">
+        <a class="map-card" href="#safety">
+          <small>01</small>
+          <b>安全服务能力</b>
+          <span>协作损耗 → 分层适配 → 我能参与的输入</span>
+        </a>
+        <a class="map-card" href="#retention">
+          <small>02</small>
+          <b>用户留存与体验</b>
+          <span>站外原声 → 健康内容 / 敢说话 → 误伤 sop</span>
+        </a>
+        <a class="map-card" href="#ai">
+          <small>03</small>
+          <b>AI探索</b>
+          <span>巡检助手 · 线索上报助手</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- SAFETY -->
+    <section class="section chapter" id="safety" data-section data-ink="cinnabar">
+      <header class="chapter-head">
+        <span class="chapter-index">01</span>
+        <h2 class="chapter-title">安全服务能力</h2>
+      </header>
+      <ol class="spine">
+        <li><a href="#safety-q">问题</a></li>
+        <li><a href="#safety-t">思考</a></li>
+        <li><a href="#safety-a">落地</a></li>
+      </ol>
+
+      <div class="stage" id="safety-q">
+        <p class="stage-mark">问题</p>
+        <h3 class="stage-title">模型能力与协作效率</h3>
+      </div>
+      <p class="sub">当前模型训练和策略优化仍高度依赖算法团队完成样本处理、模型训练、参数调优和上线部署，运营主要承担需求提出和结果验收，对训练过程和模型效果的干预有限。</p>
+      <div class="problem-list">
+        <details class="problem">
+          <summary><span class="n">①</span><b>业务信息传递存在损耗</b></summary>
+          <div class="body">运营熟悉具体治理场景，但算法主要依据需求文档和样本训练，较难完整掌握饭圈黑话、谐音、反讽及事件语境，模型结果容易与真实业务口径产生偏差。</div>
+        </details>
+        <details class="problem">
+          <summary><span class="n">②</span><b>问题发现与修复链路较长</b></summary>
+          <div class="body">每次调整通常需要经历“运营提需—算法训练—运营评估—问题反馈—算法再训练”，问题往往到验收阶段才集中暴露，难以快速响应突发舆情和高频变种内容。</div>
+        </details>
+        <details class="problem">
+          <summary><span class="n">③</span><b>模型与策略能力缺少协同</b></summary>
+          <div class="body">算法模型、大模型、关键词和规则等能力尚未根据场景进行清晰分层，可能出现简单问题使用高成本模型、复杂语义又依赖规则硬匹配的情况。</div>
+        </details>
+      </div>
+
+      <div class="stage" id="safety-t">
+        <p class="stage-mark">思考</p>
+        <h3 class="stage-title">提升模型与真实治理业务的适配度</h3>
+      </div>
+      <p class="sub">重点不应只是“开发更多模型”，而是提升模型与真实治理业务的适配度，并明确规则、传统算法模型、大模型和人工审核各自的能力边界，形成运营能够参与业务输入和效果评估的分层治理方式。</p>
+
+      <div class="seg" data-tabs>
+        <div class="seg-nav">
+          <button type="button" class="is-active" data-tab="algo">传统算法模型</button>
+          <button type="button" data-tab="llm">大模型</button>
+        </div>
+        <article class="card" data-pane="algo">
+          <p>优势是推理速度快、单次成本较低，适合稳定、高频、边界清晰且数据量大的场景；局限是依赖高质量标注样本，对新事件、新黑话和隐晦表达适应较慢，每次迭代通常需要重新训练和部署。</p>
+        </article>
+        <article class="card" data-pane="llm" hidden>
+          <p>优势是语义理解和泛化能力较强，能够结合上下文识别反讽、谐音、黑话及复杂攻击关系，也可辅助样本生产和案例归因；局限是成本和响应耗时较高、输出存在波动，对审核口径和业务知识依赖较强，未经业务适配不宜直接作为最终处罚依据。</p>
+        </article>
+      </div>
+
+      <div class="card" style="margin-top:18px;" data-bars>
+        <h4>亮点数据：算法侧主导训练的大模型，业务准确率偏低</h4>
+        <p class="sub" style="margin-bottom:8px;">核心问题可能并非单纯的模型能力不足，而是训练数据与线上风险分布不一致，算法对审核标准、饭圈黑话、隐晦攻击和事件语境理解有限，运营又主要在训练结束后验收，导致模型训练与真实业务脱节。</p>
+        <div class="bar-row">
+          <div class="top"><span>weian-微博（饭圈）</span><b>约 14%</b></div>
+          <div class="bar"><i data-w="14%"></i></div>
+        </div>
+        <div class="bar-row">
+          <div class="top"><span>weian-评论（饭圈）</span><b>30%</b></div>
+          <div class="bar"><i data-w="30%"></i></div>
+        </div>
+        <div class="bar-row">
+          <div class="top"><span>千问 7.3</span><b>91%</b></div>
+          <div class="bar"><i data-w="91%"></i></div>
+        </div>
+      </div>
+
+      <div class="stage" id="safety-a">
+        <p class="stage-mark">落地</p>
+      </div>
+      <div class="action-board">
+        <p>从自身能够参与的环节入手，持续整理重点场景的审核标准、典型正反例、边界案例、豁免内容和黑话变体；对误判、漏判 Case 进行分类，补充判定依据和共性特征，避免只反馈单条问题。</p>
+        <p>在协作方式上，在提需阶段尽可能明确治理场景、业务口径、重点识别内容和误伤边界；在模型评估阶段，按违规类型、表达方式和边界场景拆解效果，对错误结果进行归因，并结合问题提出补样本、改标签、调阈值、加规则兜底或增加大模型复判等建议。</p>
+        <p>先减少因需求描述不清、业务信息不足造成的重复沟通和返工，提升模型评估与算法协作效率；后续再根据小范围验证效果，判断是否需要进一步建设面向审核场景的运营配置和模型生产能力。</p>
+      </div>
+      <h3 style="margin-top:40px;">探索方向</h3>
+      <p class="sub">可探索让运营更便捷地配置业务标准、标签、提示词和评估样本，使算法能力更贴近实际审核场景。</p>
+      <div class="mini-flow">
+        <span>标准配置</span><i>→</i>
+        <span>样本与标注</span><i>→</i>
+        <span>训练或微调</span><i>→</i>
+        <span>效果评估</span><i>→</i>
+        <span>错误回流</span>
+      </div>
+    </section>
+
+    <!-- RETENTION -->
+    <section class="section chapter" id="retention" data-section data-ink="brass">
+      <header class="chapter-head">
+        <span class="chapter-index">02</span>
+        <h2 class="chapter-title">用户留存与体验</h2>
+      </header>
+      <ol class="spine">
+        <li><a href="#ret-q">问题</a></li>
+        <li><a href="#ret-t">思考</a></li>
+        <li><a href="#ret-a">落地</a></li>
+      </ol>
+
+      <div class="stage" id="ret-q">
+        <p class="stage-mark">问题</p>
+      </div>
+      <p class="sub">收集自豆瓣、小红书、threads等“饭圈用户”聚集的平台。</p>
+      <p class="quote">从饭圈用户的视角看，大家不是完全不用微博了，而是觉得它没以前好用了。</p>
+      <p class="sub" style="margin-top:20px;">以前追星离不开微博：看行程、蹲物料、做数据、围观都在这；现在很多人做内容、看安利、追热点，更习惯去小红书和抖音。</p>
+
+      <div class="voice-stage">
+        <div class="voice-window">
+          <div class="voice-track">
+            <figure class="shot" data-zoom="assets/voices/v1.png"><img src="assets/voices/v1.png" alt="用户原声 1" /></figure>
+            <figure class="shot" data-zoom="assets/voices/v2.png"><img src="assets/voices/v2.png" alt="用户原声 2" /></figure>
+            <figure class="shot" data-zoom="assets/voices/v3.png"><img src="assets/voices/v3.png" alt="用户原声 3" /></figure>
+            <figure class="shot" data-zoom="assets/voices/v4.png"><img src="assets/voices/v4.png" alt="用户原声 4" /></figure>
+            <figure class="shot" data-zoom="assets/voices/v5.png"><img src="assets/voices/v5.png" alt="用户原声 5" /></figure>
+            <figure class="shot" data-zoom="assets/voices/v6.png"><img src="assets/voices/v6.png" alt="用户原声 6" /></figure>
+            <figure class="shot" data-zoom="assets/voices/v7.png"><img src="assets/voices/v7.png" alt="用户原声 7" /></figure>
+            <figure class="shot" data-zoom="assets/voices/v8.png"><img src="assets/voices/v8.png" alt="用户原声 8" /></figure>
+            <figure class="shot" data-zoom="assets/voices/v1.png"><img src="assets/voices/v1.png" alt="" /></figure>
+            <figure class="shot" data-zoom="assets/voices/v2.png"><img src="assets/voices/v2.png" alt="" /></figure>
+            <figure class="shot" data-zoom="assets/voices/v3.png"><img src="assets/voices/v3.png" alt="" /></figure>
+            <figure class="shot" data-zoom="assets/voices/v4.png"><img src="assets/voices/v4.png" alt="" /></figure>
+            <figure class="shot" data-zoom="assets/voices/v5.png"><img src="assets/voices/v5.png" alt="" /></figure>
+            <figure class="shot" data-zoom="assets/voices/v6.png"><img src="assets/voices/v6.png" alt="" /></figure>
+            <figure class="shot" data-zoom="assets/voices/v7.png"><img src="assets/voices/v7.png" alt="" /></figure>
+            <figure class="shot" data-zoom="assets/voices/v8.png"><img src="assets/voices/v8.png" alt="" /></figure>
+          </div>
+        </div>
+        <div class="voice-side">
+          <p>大家比较不满的点，主要有两个：</p>
+          <article class="card">
+            <h4>想讨论的事，常常没声量。</h4>
+            <p>有些站外讨论起来的事情，微博却未必能形成相应热度，用户会觉得平台对真实舆情不敏感。</p>
+          </article>
+          <article class="card">
+            <h4>不想再为“数据”买单。</h4>
+            <p>对普通追星用户来说，做数据越来越累，除了非饭圈用户，饭圈用户也有很大一部分不想看到控评、互撕、营销号话术。</p>
+          </article>
+          <p class="quote">所以用户想要的是——能顺畅表达，不会被不健康的内容骚扰。</p>
+        </div>
+      </div>
+
+      <div class="stage" id="ret-t">
+        <p class="stage-mark">思考</p>
+        <h3 class="stage-title">用户留存，生态策略能做什么？</h3>
+      </div>
+      <div class="seg" data-tabs>
+        <div class="seg-nav">
+          <button type="button" class="is-active" data-tab="health">让用户看到健康的内容</button>
+          <button type="button" data-tab="speak">让用户敢说话</button>
+        </div>
+        <article class="card" data-pane="health">
+          <p><b style="color:var(--text);">关注低质、底线内容：</b>仍应优先处理开盒、引导网暴等直接伤害用户的内容，处理刷量、互撕、丑图、大字报等直接影响社区氛围和用户观感的内容。</p>
+          <p><b style="color:var(--text);">舆情管控基建：</b>持续补充饭圈中高危风险用户圈定，红黑粉圈定，为紧急舆情做好策略准备。</p>
+        </article>
+        <article class="card" data-pane="speak" hidden>
+          <p><b style="color:var(--text);">规则透传：</b>处理结果尽量向用户说明原因，把规则透传到每一位主启DAU用户甚至每一个普户，协同社区团队。</p>
+          <p><b style="color:var(--text);">动态维护策略：</b>关注误伤情况，及时完成归因和调优，将误处置情况降低。</p>
+          <p><b style="color:var(--text);">单个策略准确率巡检：</b>积累错误样本、及时关注低处置、低准确率的策略，从根源减少误伤，推动异常策略优化，且减少机审压力。</p>
+        </article>
+      </div>
+
+      <div class="stage" id="ret-a">
+        <p class="stage-mark">落地</p>
+        <h3 class="stage-title">形成误伤治理 sop</h3>
+      </div>
+      <p class="sub">在现有策略评估中重点关注误伤情况，评估数据口径可以包括人审队列审出数据（前置召回有误的case），还可以从申诉较多、人工复审撤销较多的策略中，筛出高误伤策略，抽样看具体数据，判断是策略问题还是标准迭代问题，对重复出现的问题，再针对性细化规则，形成误伤治理sop。</p>
+      <div class="sop">
+        <div class="node"><b>01 关注误伤</b>现有策略评估中重点关注误伤情况</div>
+        <div class="node"><b>02 筛高误伤策略</b>申诉较多、人工复审撤销较多</div>
+        <div class="node"><b>03 抽样看数据</b>判断是策略问题还是标准迭代问题</div>
+        <div class="node"><b>04 细化规则</b>对重复出现的问题针对性细化</div>
+        <div class="node"><b>05 形成 sop</b>目前在做：收集客诉中的误伤case，分析策略归属和误伤原因</div>
+      </div>
+    </section>
+
+    <!-- AI -->
+    <section class="section chapter" id="ai" data-section data-ink="cyan">
+      <header class="chapter-head">
+        <span class="chapter-index">03</span>
+        <h2 class="chapter-title">AI探索</h2>
+      </header>
+
+      <div class="seg tool-seg" data-tabs>
+        <div class="seg-nav">
+          <button type="button" class="is-active" data-tab="inspect">策略准确率自动化巡检助手</button>
+          <button type="button" data-tab="report">线索上报助手</button>
+        </div>
+
+        <div data-pane="inspect">
+          <h3 class="stage-title">策略准确率自动化巡检助手</h3>
+          <p class="sub">目前准确率巡检有两个口径，一是双周大盘准确率【产品标注团队牵头，专项侧收口】，二是每周处置率、曝光数据标注，主动发现策略劣化风险；没有定时针对单个重点策略的准确率巡检。</p>
+
+          <h3 style="margin-top:48px;">流程图</h3>
+          <figure class="orig-flow" data-zoom="assets/flow/inspect.png?v=3">
+            <img src="assets/flow/inspect.png?v=3" alt="饭圈策略准确率巡检助手原流程图" />
+          </figure>
+          <div class="flow" data-flow style="margin-top:18px;">
+            <button class="flow-step active" type="button" data-target="ins-1"><b>① 巡检配置</b><span>提示词 · 抽样规则 · 预警阈值 · 词表</span></button>
+            <span class="flow-arrow">→</span>
+            <button class="flow-step" type="button" data-target="ins-2"><b>② 数据获取和样本抽取</b><span>导出 · 去重 · 抽样 · 校验</span></button>
+            <span class="flow-arrow">→</span>
+            <button class="flow-step" type="button" data-target="ins-3"><b>③ AI 过检</b><span>模型策略判定 / 关键词策略判定</span></button>
+            <span class="flow-arrow">→</span>
+            <button class="flow-step" type="button" data-target="ins-4"><b>④ 指标计算</b><span>准确率 · 误处置率 · 置信度校验</span></button>
+            <span class="flow-arrow">→</span>
+            <button class="flow-step" type="button" data-target="ins-5"><b>⑤ 数据可视化</b><span>结果表 · 异常报警 · 趋势报告</span></button>
+            <span class="flow-arrow">→</span>
+            <button class="flow-step" type="button" data-target="ins-6"><b>⑥ 风险回溯</b><span>模型类 / 关键词类策略</span></button>
+          </div>
+          <article class="card" style="margin-top:16px;">
+            <p id="ins-1" class="flow-detail">① 巡检配置：配置策略过检提示词 → 抽样规则 → 预警阈值 → 词表。左侧闭环：提示词优化。</p>
+            <p id="ins-2" class="flow-detail" hidden>② 数据获取和样本抽取：自动导出命中数据 → 去重 → 按照规则抽样 → 校验。</p>
+            <p id="ins-3" class="flow-detail" hidden>③ AI 过检：模型策略判定（根据提示词过检，识别语义）；关键词策略判定（根据词表、结合提示词过检）。输出判定结果：正确 / 错误 / 不确定。</p>
+            <p id="ins-4" class="flow-detail" hidden>④ 指标计算：准确率 → 误处置率 → 置信度校验。</p>
+            <p id="ins-5" class="flow-detail" hidden>⑤ 数据可视化：写入结果表 → 异常策略报警 → 趋势报告。</p>
+            <p id="ins-6" class="flow-detail" hidden>⑥ 风险回溯：模型类策略（调整模型阈值 | 增加误伤区分特征 | 模型迭代）；关键词策略（优化词库 | 增加隔离 | 策略下线）。</p>
+          </article>
+
+          <h3 style="margin-top:40px;">提效点</h3>
+          <p class="sub">风险认知+策略优劣感知</p>
+          <div class="grid-3" style="margin:16px 0 0;">
+            <div class="stat">
+              <div class="value">1~2<span class="unit">h</span></div>
+              <div class="label">人工单策略准确率评估</div>
+            </div>
+            <div class="stat">
+              <div class="value">约5<span class="unit">min</span></div>
+              <div class="label">Agent 单策略准确率评估</div>
+            </div>
+            <div class="stat">
+              <div class="value">9.15</div>
+              <div class="label">饭圈刷量控评策略准确率预警后，更改 rag 提示词，准确率回升至正常</div>
+            </div>
+          </div>
+          <div class="seg" data-tabs style="margin-top:20px;">
+            <div class="seg-nav">
+              <button type="button" class="is-active" data-tab="c1">过检一致性</button>
+              <button type="button" data-tab="c2">评估报告产出</button>
+              <button type="button" data-tab="c3">评估主动性</button>
+              <button type="button" data-tab="c4">策略调优效率</button>
+            </div>
+            <article class="card" data-pane="c1"><p>人工过检依赖个人经验，口径易漂移，Agent统一按配置表判定标准，结果可追溯</p></article>
+            <article class="card" data-pane="c2" hidden><p>人工过检需要手动算数 + 回填表格，Agent可以自动落表，低准确率自动预警并发送钉钉提醒；列出误处置样本，误处置样本可以进入自己的“误伤治理sop知识库”，为策略调优和模型迭代赋能；仪表盘观测大盘策略、单个策略的准确率趋势。</p></article>
+            <article class="card" data-pane="c3" hidden><p>每周一/周三/周五钉钉提醒巡检，提高策略巡检频率；特殊舆情节点or策略爆量时快速巡检（eg：算法发现模型爆量—人工回溯舆情事件+自动巡检当日策略准确率=策略准确率评估）</p></article>
+            <article class="card" data-pane="c4" hidden><p>跟踪量级、准确率，及时调整策略特征（eg：饭圈刷量控评策略9.15观测到准确率预警，通过错误样本更改了rag提示词，之后准确率回升至正常）。</p></article>
+          </div>
+
+          <h3 style="margin-top:40px;">落表原图</h3>
+          <div class="seg" data-tabs>
+            <div class="seg-nav">
+              <button type="button" class="is-active" data-tab="cfg">策略配置表</button>
+              <button type="button" data-tab="res">巡检结果表</button>
+              <button type="button" data-tab="err">错误清单</button>
+            </div>
+            <figure class="shot" data-pane="cfg" data-zoom="assets/product/config.png?v=3" style="background:#fff;">
+              <img src="assets/product/config.png?v=3" alt="策略配置表" />
+            </figure>
+            <figure class="shot" data-pane="res" hidden data-zoom="assets/product/results.png?v=3" style="background:#fff;">
+              <img src="assets/product/results.png?v=3" alt="巡检结果表" />
+            </figure>
+            <figure class="shot compact" data-pane="err" hidden data-zoom="assets/product/errors.png?v=3" style="background:#fff;">
+              <img src="assets/product/errors.png?v=3" alt="错误清单 / 误处置样本" />
+            </figure>
+          </div>
+
+          <details class="fold">
+            <summary>能力边界与展望</summary>
+            <div class="grid-3" style="margin-top:16px;">
+              <article class="card"><p>后台授权需要人工完成，无法 100% 无人值守定时跑，授权过期会中断巡检。</p></article>
+              <article class="card"><p>提示词需要动态维护，策略和业务方向变化需要重调提示词；边缘语境、反讽、隐晦表达仍可能误判。</p></article>
+              <article class="card"><p>过检类型和量级受模型能力限制，只能过检文本策略、只能抽样过检而非全量，小样本策略的准确率波动大，结论置信度有限。</p></article>
+            </div>
+            <h4 style="margin-top:24px;">展望：策略自动化抽检接口</h4>
+            <p class="sub">功能描述：开发支持自定义配置的策略抽检接口，按周期（如每日）自动抽样微博、评论、图片策略召回数据，接入 AI 大模型完成准确率监测，替代浏览器自动化链路。</p>
+            <div class="sop four">
+              <div class="node"><b>策略抽样</b>接口按预设规则（每日定时、抽样比例、按策略线配置）自动从召回内容中抽取数据，摆脱后台登录授权依赖。</div>
+              <div class="node"><b>模型评估</b>抽样数据自动送入大模型判定打标，模型策略与关键词策略走不同判定链路，判定标准集中配置、可版本化管理。</div>
+              <div class="node"><b>指标输出</b>自动计算并输出各策略当前准确率，支持趋势看板与阈值告警。</div>
+              <div class="node"><b>闭环调优</b>准确率异常时不仅告警，自动聚类误处置样本的共性（如某类文案、某类语境），输出策略调整建议，人只做最终确认。</div>
+            </div>
+          </details>
+        </div>
+
+        <div data-pane="report" hidden>
+          <h3 class="stage-title">线索上报助手</h3>
+          <p class="sub">每日需要向gr上报一批线索数据，这批数据优于线索要求的特殊性，无法直接通过关键词策略配置-召回得到精确结果，需要经过语义理解清洗。</p>
+
+          <h3 style="margin-top:48px;">流程图</h3>
+          <figure class="orig-flow" data-zoom="assets/flow/report.png?v=3">
+            <img src="assets/flow/report.png?v=3" alt="北京地区粉丝风险线索上报助手原流程图" />
+          </figure>
+          <div class="flow" data-flow style="margin-top:18px;">
+            <button class="flow-step active" type="button" data-target="rp-1"><b>① 任务配置与数据获取</b><span>确认范围 · 查询参数 · 后台查询 · 落盘</span></button>
+            <span class="flow-arrow">→</span>
+            <button class="flow-step" type="button" data-target="rp-2"><b>② 文件校验、字段适配与唯一化</b><span>CSV 质检 · 微博/评论字段 · 顺序化清洗</span></button>
+            <span class="flow-arrow">→</span>
+            <button class="flow-step" type="button" data-target="rp-3"><b>③ 风险线索语义审核</b><span>内容语义 · 智能筛选 · 核心风险</span></button>
+            <span class="flow-arrow">→</span>
+            <button class="flow-step" type="button" data-target="rp-4"><b>④ 结果生成、质量校验与交付</b><span>Excel · 列结构校验 · 清理并交付</span></button>
+          </div>
+          <article class="card" style="margin-top:16px;">
+            <p id="rp-1" class="flow-detail">① 任务配置与数据获取：确认任务范围（选择微博/评论策略、解析日期范围）→ 生成并校验查询参数（策略 ID、业务类型、起止时间一致）→ 触发后台查询（查询完成后创建一次导出任务）→ 精准下载并确认落盘（按任务 ID 触发下载，定位工作目录中的 CSV）。</p>
+            <p id="rp-2" class="flow-detail" hidden>② 文件校验、字段适配与唯一化：原始 CSV 质检（确认可解析、非空、字段完整）；微博策略以 mid 去重，保留 mid / uid / 内容；评论策略以处出ID去重，保留处出ID / 发布者(UID) / 评论内容；顺序化清洗，保留首次记录并校验唯一性，原始 CSV 全程留存。</p>
+            <p id="rp-3" class="flow-detail" hidden>③ 风险线索语义审核：聚焦内容语义，仅依据内容序列判断，排除身份与标签干扰 → 分层智能筛选，明确相关保留，模糊、疑似、信息不足删除 → 排他核心风险：组织动员 / 资金行为 / 线下聚集 / 舆情冲突。转发内容二次判断 + 相关空转按原始 mid 唯一保留 + 结果回取原始字段值。</p>
+            <p id="rp-4" class="flow-detail" hidden>④ 结果生成、质量校验与交付：生成标准 Excel（按策略固定三列，保持原值与原始顺序）→ 交付质量校验（列结构、唯一键、顺序与原值）→ 清理并交付（移除中间文件，保留结果与原始 CSV）。最终交付可直接用于北京地区粉丝风险线索上报的标准化 Excel。流程产出：结构统一、语义聚焦、质证可控的风险线索清单。</p>
+          </article>
+
+          <h3 style="margin-top:40px;">提效点</h3>
+          <p class="sub">基础任务的自动化替代</p>
+          <div class="grid-2" style="margin:16px 0;">
+            <div class="stat">
+              <div class="value">30<span class="unit">min+</span></div>
+              <div class="label">人工导出并逐条复核上报</div>
+            </div>
+            <div class="stat">
+              <div class="value">1~10<span class="unit">min</span></div>
+              <div class="label">Agent 导出并清洗（约 60%+ 压缩）</div>
+            </div>
+          </div>
+          <article class="card">
+            <h4>复用性</h4>
+            <p>将线索要求和审核口径固化，组内成员可按统一标准执行，减少个人经验差异和重复培训成本；减少误报与无效信息，快速过滤通过关键词策略召回的无关内容。</p>
+          </article>
+
+          <details class="fold">
+            <summary>展望：拓展到更多线索上报场景</summary>
+            <p>复用于风险线索上报流程中，如后续网信办、公安关注的场景集中、上报频繁的重点舆情。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox"><img alt="放大预览" /></div>
+  <footer>
+    <a href="work.html">← 做了什么 / 学了什么</a>
+    <a href="plan.html">下一章：下一阶段计划 →</a>
+  </footer>
+  <script src="js/fx.js"></script>
+  <script src="js/main.js?v=n20"></script>
+</body>
+</html>
