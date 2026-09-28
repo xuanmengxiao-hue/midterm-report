@@ -65,7 +65,13 @@ $$("[data-tabs]").forEach((root) => {
   btns.forEach((btn) => {
     btn.addEventListener("click", () => {
       btns.forEach((b) => b.classList.toggle("is-active", b === btn));
-      panes.forEach((p) => { p.hidden = p.dataset.pane !== btn.dataset.tab; });
+      panes.forEach((p) => {
+        p.hidden = p.dataset.pane !== btn.dataset.tab;
+        if (p.hidden) return;
+        p.querySelectorAll(".bar i[data-w]").forEach((bar) => {
+          bar.style.width = bar.dataset.w;
+        });
+      });
     });
   });
 });

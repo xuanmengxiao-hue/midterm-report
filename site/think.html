@@ -63,17 +63,14 @@
         <a class="map-card" href="#safety">
           <small>01</small>
           <b>安全服务能力</b>
-          <span>协作损耗 → 分层适配 → 我能参与的输入</span>
         </a>
         <a class="map-card" href="#retention">
           <small>02</small>
           <b>用户留存与体验</b>
-          <span>站外原声 → 健康内容 / 敢说话 → 误伤 sop</span>
         </a>
         <a class="map-card" href="#ai">
           <small>03</small>
           <b>AI探索</b>
-          <span>巡检助手 · 线索上报助手</span>
         </a>
       </div>
     </section>
@@ -94,7 +91,6 @@
         <p class="stage-mark">问题</p>
         <h3 class="stage-title">模型能力与协作效率</h3>
       </div>
-      <p class="sub">当前模型训练和策略优化仍高度依赖算法团队完成样本处理、模型训练、参数调优和上线部署，运营主要承担需求提出和结果验收，对训练过程和模型效果的干预有限。</p>
       <div class="problem-list">
         <details class="problem">
           <summary><span class="n">①</span><b>业务信息传递存在损耗</b></summary>
@@ -127,11 +123,8 @@
         <article class="card" data-pane="llm" hidden>
           <p>优势是语义理解和泛化能力较强，能够结合上下文识别反讽、谐音、黑话及复杂攻击关系，也可辅助样本生产和案例归因；局限是成本和响应耗时较高、输出存在波动，对审核口径和业务知识依赖较强，未经业务适配不宜直接作为最终处罚依据。</p>
         </article>
-      </div>
-
-      <div class="card" style="margin-top:18px;" data-bars>
+        <div class="card" style="margin-top:18px;" data-pane="llm" data-bars hidden>
         <h4>算法侧主导训练的大模型，业务准确率偏低</h4>
-        <p class="sub" style="margin-bottom:8px;">核心问题可能并非单纯的模型能力不足，而是训练数据与线上风险分布不一致，算法对审核标准、饭圈黑话、隐晦攻击和事件语境理解有限，运营又主要在训练结束后验收，导致模型训练与真实业务脱节。</p>
         <div class="bar-row">
           <div class="top"><span>weian-微博（饭圈）</span><b>约 14%</b></div>
           <div class="bar"><i data-w="14%"></i></div>
@@ -144,6 +137,7 @@
           <div class="top"><span>千问 7.3</span><b>91%</b></div>
           <div class="bar"><i data-w="91%"></i></div>
         </div>
+        </div>
       </div>
 
       <div class="stage" id="safety-a">
@@ -152,13 +146,13 @@
       </div>
       <h4 style="margin:8px 0 12px;font-size:20px;font-weight:700;">算法模型</h4>
       <div class="sop four">
-        <div class="node"><b>提需阶段的精细化</b>在提需阶段尽可能明确治理场景、业务口径、重点识别内容和误伤边界，补充判定依据和共性特征，避免只反馈单条问题。</div>
-        <div class="node"><b>协作方式</b>在模型评估阶段提升主动跟进的频率，在训练模型的过程中占据主动性地位，及时关注算法的进度和问题，定期收集少量找回样本。</div>
+        <div class="node"><b>提需阶段的精细化</b></div>
+        <div class="node"><b>协作方式</b></div>
       </div>
       <h4 style="margin:28px 0 12px;font-size:20px;font-weight:700;">大模型</h4>
       <div class="sop four">
-        <div class="node"><b>积累大模型适配的业务场景</b>目前饭圈热度序大模型的使用场景从评论逐步运用至微博，覆盖范围从娱乐领域金V逐步运用至橙V，从“小范围验证”这个思路入手，探索更多大模型能够填补算法模型治理边界的场景。</div>
-        <div class="node"><b>思考大模型在整个审核链路中的作用</b>比如自动化分流大模型、生态冲突领域隔离大模型。</div>
+        <div class="node"><b>积累大模型适配的业务场景</b></div>
+        <div class="node"><b>思考大模型在整个审核链路中的作用</b></div>
       </div>
       <h3 style="margin-top:40px;">探索方向</h3>
       <p class="sub">可探索建设一个面向审核场景的，让运营便捷配置业务标准、提示词和评估样本的，产运即配即用的模型生产平台，通过运营自己训练微调，使算法能力更贴近业务场景。</p>
@@ -188,7 +182,6 @@
       </div>
       <p class="sub">收集自豆瓣、小红书、threads等“饭圈用户”聚集的平台。</p>
       <p class="quote">从饭圈用户的视角看，大家不是完全不用微博了，而是觉得它没以前好用了。</p>
-      <p class="sub" style="margin-top:20px;">以前追星离不开微博：看行程、蹲物料、做数据、围观都在这；现在很多人做内容、看安利、追热点，更习惯去小红书和抖音。</p>
 
       <div class="voice-stage">
         <div class="voice-window">
@@ -215,11 +208,9 @@
           <p>大家比较不满的点，主要有两个：</p>
           <article class="card">
             <h4>想讨论的事，常常没声量。</h4>
-            <p>有些站外讨论起来的事情，微博却未必能形成相应热度，用户会觉得平台对真实舆情不敏感。</p>
           </article>
           <article class="card">
-            <h4>不想再为“数据”买单。</h4>
-            <p>对普通追星用户来说，做数据越来越累，除了非饭圈用户，饭圈用户也有很大一部分不想看到控评、互撕、营销号话术。</p>
+            <h4>没有活人，氛围太差。</h4>
           </article>
           <p class="quote">所以用户想要的是——能顺畅表达，不会被不健康的内容骚扰。</p>
         </div>
@@ -249,7 +240,6 @@
         <p class="stage-mark">落地</p>
         <h3 class="stage-title">形成误伤治理 sop</h3>
       </div>
-      <p class="sub">在现有策略评估中重点关注误伤情况，评估数据口径可以包括人审队列审出数据（前置召回有误的case），还可以从申诉较多、人工复审撤销较多的策略中，筛出高误伤策略，抽样看具体数据，判断是策略问题还是标准迭代问题，对重复出现的问题，再针对性细化规则，形成误伤治理sop。</p>
       <div class="sop">
         <div class="node"><b>01 关注误伤</b>现有策略评估中重点关注误伤情况</div>
         <div class="node"><b>02 筛高误伤策略</b>申诉较多、人工复审撤销较多</div>
@@ -274,7 +264,6 @@
 
         <div data-pane="inspect">
           <h3 class="stage-title">策略准确率自动化巡检助手</h3>
-          <p class="sub">目前准确率巡检有两个口径，一是双周大盘准确率【产品标注团队牵头，专项侧收口】，二是每周处置率、曝光数据标注，主动发现策略劣化风险；没有定时针对单个重点策略的准确率巡检。</p>
 
           <h3 style="margin-top:48px;">流程图</h3>
           <figure class="orig-flow" data-zoom="assets/flow/inspect.png?v=3">
@@ -357,19 +346,17 @@
               <article class="card"><p>过检类型和量级受模型能力限制，只能过检文本策略、只能抽样过检而非全量，小样本策略的准确率波动大，结论置信度有限。</p></article>
             </div>
             <h4 style="margin-top:24px;">展望：策略自动化抽检接口</h4>
-            <p class="sub">功能描述：开发支持自定义配置的策略抽检接口，按周期（如每日）自动抽样微博、评论、图片策略召回数据，接入 AI 大模型完成准确率监测，替代浏览器自动化链路。</p>
             <div class="sop four">
-              <div class="node"><b>策略抽样</b>接口按预设规则（每日定时、抽样比例、按策略线配置）自动从召回内容中抽取数据，摆脱后台登录授权依赖。</div>
-              <div class="node"><b>模型评估</b>抽样数据自动送入大模型判定打标，模型策略与关键词策略走不同判定链路，判定标准集中配置、可版本化管理。</div>
-              <div class="node"><b>指标输出</b>自动计算并输出各策略当前准确率，支持趋势看板与阈值告警。</div>
-              <div class="node"><b>闭环调优</b>准确率异常时不仅告警，自动聚类误处置样本的共性（如某类文案、某类语境），输出策略调整建议，人只做最终确认。</div>
+              <div class="node"><b>策略抽样</b></div>
+              <div class="node"><b>模型评估</b></div>
+              <div class="node"><b>指标输出</b></div>
+              <div class="node"><b>闭环调优</b></div>
             </div>
           </details>
         </div>
 
         <div data-pane="report" hidden>
           <h3 class="stage-title">线索上报助手</h3>
-          <p class="sub">每日需要向gr上报一批线索数据，这批数据优于线索要求的特殊性，无法直接通过关键词策略配置-召回得到精确结果，需要经过语义理解清洗。</p>
 
           <h3 style="margin-top:48px;">流程图</h3>
           <figure class="orig-flow" data-zoom="assets/flow/report.png?v=3">
@@ -423,6 +410,6 @@
     <a href="plan.html">下一章：下一阶段计划 →</a>
   </footer>
   <script src="js/fx.js"></script>
-  <script src="js/main.js?v=n22"></script>
+  <script src="js/main.js?v=n23"></script>
 </body>
 </html>
