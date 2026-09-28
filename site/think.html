@@ -254,6 +254,7 @@
       <header class="chapter-head">
         <span class="chapter-index">03</span>
         <h2 class="chapter-title">AI探索</h2>
+        <p class="sub" style="font-size:15px;line-height:1.65;font-weight:400;margin:4px 0 0;">数据获取—标准判定—结果输出—问题回流</p>
       </header>
 
       <div class="seg tool-seg" data-tabs>
@@ -263,7 +264,7 @@
         </div>
 
         <div data-pane="inspect">
-          <h3 class="stage-title">策略准确率自动化巡检助手</h3>
+          <h3 class="stage-title">策略准确率自动化巡检助手：让策略问题从“事后发现”转向“主动预警”</h3>
 
           <h3 style="margin-top:48px;">流程图</h3>
           <figure class="orig-flow" data-zoom="assets/flow/inspect.png?v=3">
@@ -309,15 +310,13 @@
           </div>
           <div class="seg" data-tabs style="margin-top:20px;">
             <div class="seg-nav">
-              <button type="button" class="is-active" data-tab="c1">过检一致性</button>
-              <button type="button" data-tab="c2">评估报告产出</button>
-              <button type="button" data-tab="c3">评估主动性</button>
-              <button type="button" data-tab="c4">策略调优效率</button>
+              <button type="button" class="is-active" data-tab="c1">效率价值</button>
+              <button type="button" data-tab="c2">标准价值</button>
+              <button type="button" data-tab="c3">治理价值</button>
             </div>
-            <article class="card" data-pane="c1"><p>人工过检依赖个人经验，口径易漂移，Agent统一按配置表判定标准，结果可追溯</p></article>
-            <article class="card" data-pane="c2" hidden><p>人工过检需要手动算数 + 回填表格，Agent可以自动落表，低准确率自动预警并发送钉钉提醒；列出误处置样本，误处置样本可以进入自己的“误伤治理sop知识库”，为策略调优和模型迭代赋能；仪表盘观测大盘策略、单个策略的准确率趋势。</p></article>
-            <article class="card" data-pane="c3" hidden><p>每周一/周三/周五钉钉提醒巡检，提高策略巡检频率；特殊舆情节点or策略爆量时快速巡检（eg：算法发现模型爆量—人工回溯舆情事件+自动巡检当日策略准确率=策略准确率评估）</p></article>
-            <article class="card" data-pane="c4" hidden><p>跟踪量级、准确率，及时调整策略特征（eg：饭圈刷量控评策略9.15观测到准确率预警，通过错误样本更改了rag提示词，之后准确率回升至正常）。</p></article>
+            <article class="card" data-pane="c1"><p>巡检后落表能够观测大盘策略、单个策略的准确率趋势；每周一/周三/周五钉钉提醒巡检，提高策略巡检频率；特殊舆情节点or策略爆量时快速巡检。</p></article>
+            <article class="card" data-pane="c2" hidden><p>以配置化口径完成过检，降低不同人员间的判断漂移，且过程可追溯；积累的错误样本天然可以支持提示词迭代。</p></article>
+            <article class="card" data-pane="c3" hidden><p>将误处置样本沉淀进入误伤治理 SOP，支撑“巡检—预警—归因—调优—复验”的闭环。</p></article>
           </div>
 
           <h3 style="margin-top:40px;">落表原图</h3>
@@ -341,22 +340,19 @@
           <details class="fold">
             <summary>能力边界与展望</summary>
             <div class="grid-3" style="margin-top:16px;">
-              <article class="card"><p>后台授权需要人工完成，无法 100% 无人值守定时跑，授权过期会中断巡检。</p></article>
-              <article class="card"><p>提示词需要动态维护，策略和业务方向变化需要重调提示词；边缘语境、反讽、隐晦表达仍可能误判。</p></article>
-              <article class="card"><p>过检类型和量级受模型能力限制，只能过检文本策略、只能抽样过检而非全量，小样本策略的准确率波动大，结论置信度有限。</p></article>
+              <article class="card"><p><b>工程层面：</b>后台授权需要人工完成，无法 100% 无人值守定时跑，授权过期会中断巡检。</p></article>
+              <article class="card"><p><b>模型能力层面：</b>过检类型和量级受模型能力限制，只能过检文本策略、只能抽样过检而非全量，小样本策略的准确率波动大，结论置信度有限；边缘语境、反讽、隐晦表达仍可能误判。</p></article>
+              <article class="card"><p><b>其他：</b>提示词需要动态维护，策略和业务方向变化需要重调提示词。</p></article>
             </div>
             <h4 style="margin-top:24px;">展望：策略自动化抽检接口</h4>
-            <div class="sop four">
-              <div class="node"><b>策略抽样</b></div>
-              <div class="node"><b>模型评估</b></div>
-              <div class="node"><b>指标输出</b></div>
-              <div class="node"><b>闭环调优</b></div>
-            </div>
+            <article class="card" style="margin-top:16px;">
+              <p>开发支持自定义配置的策略抽检接口，按周期（如每日）自动抽样微博、评论、图片策略召回数据，接入 AI 大模型完成准确率监测，人只做最终确认。</p>
+            </article>
           </details>
         </div>
 
         <div data-pane="report" hidden>
-          <h3 class="stage-title">线索上报助手</h3>
+          <h3 class="stage-title">线索上报助手：将“人工逐条清洗”转化为“标准化语义筛选”</h3>
 
           <h3 style="margin-top:48px;">流程图</h3>
           <figure class="orig-flow" data-zoom="assets/flow/report.png?v=3">
